@@ -2,10 +2,13 @@ const express = require("express");
 const server = express();
 const routes = require("./routes");
 
-//files statics
+// listen on template engine
+server.set('view engine', 'ejs')
+
+// files statics
 server.use(express.static("public"));
 
-//routes
+// routes
 server.use(routes);
 
 server.listen(3000, () => console.log('rodando'));
